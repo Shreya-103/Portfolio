@@ -302,4 +302,10 @@ text-align: center;
       align-self: center;
     }
   }
-
+  @media (max-width: 360px){
+    #aboutMe{
+      p{
+        font-size: 14px;
+      }
+    }
+  }
