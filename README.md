@@ -6,8 +6,7 @@
   A personal portfolio website showcasing my education, technical skills, projects, and resume.
 </p>
 
-<hr>
-<a href="shreya-103.github.io/Portfolio/" >📎Check it here</a>
+<a href="https://shreya-103.github.io/Portfolio/" >📎Check it here</a>
 <hr>
 ## 🔍 Features
 
