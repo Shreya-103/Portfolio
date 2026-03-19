@@ -1,7 +1,8 @@
 const sidebar = document.querySelector("#sidebar");
+const toggleBtn = document.querySelector("#menuBtn");
 
-
-function toggleSidebar(){
+function toggleSidebar(e){
+    e.stopPropagation(); // 👈 prevents body click
     sidebar.classList.toggle("active");
 }
 
