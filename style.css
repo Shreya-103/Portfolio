@@ -69,7 +69,6 @@ text-align: center;
     box-shadow: -10px 0 25px rgba(0,0,0,0.1);
 }
 
-/* ACTIVE STATE */
 #sidebar.active {
     transform: translateX(0%);
 }
@@ -152,7 +151,7 @@ text-align: center;
   transform-style: preserve-3d;
   transform: rotateX(6deg) rotateY(-6deg);
 
-  /* Soft floating shadow */
+
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.08),
     inset 0 1px 1px rgba(255, 255, 255, 0.6);
@@ -162,12 +161,10 @@ text-align: center;
     box-shadow 0.5s ease;
 }
 
-/* soft glow layer */
 .skill-card::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background: linear-gradient(
     135deg,
     rgba(255,255,255,0.5),
@@ -177,10 +174,8 @@ text-align: center;
   pointer-events: none;
 }
 
-/* subtle hover, NOT clickable */
 .skill-card:hover {
   transform: rotateX(3deg) rotateY(-3deg) translateY(-6px);
-
   box-shadow:
     0 30px 50px rgba(0, 0, 0, 0.12),
     inset 0 1px 1px rgba(255,255,255,0.8);
@@ -190,10 +185,7 @@ text-align: center;
   width: 65px;
   height: 65px;
   margin-top: 1rem;
-
-  /* gives floating icon effect */
   transform: translateZ(30px);
-
   filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
 }
 
@@ -224,7 +216,6 @@ text-align: center;
   letter-spacing: 1px;
 }
 
-   /* Projects Section Styles */
 #project {
   background: linear-gradient(135deg, #dbeafe, #f0fdf4);
   padding: 4rem 2rem;
@@ -386,7 +377,6 @@ text-align: center;
       }
     }
   }
-  /* ---------- MOBILE OPTIMIZATION ---------- */
 
 @media (max-width: 768px) {
 
@@ -398,32 +388,21 @@ text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
   }
-
   .skills-grid {
-
-    /* 2 cards per row */
     grid-template-columns: repeat(2, 1fr);
-
     gap: 1rem;
   }
 
   .skill-card {
-
     padding: 1.2rem 0.8rem;
-
     border-radius: 18px;
-
-    /* reduce heavy 3D on mobile */
     transform: rotateX(3deg) rotateY(-3deg);
-
     box-shadow:
       0 12px 25px rgba(0, 0, 0, 0.08),
       inset 0 1px 1px rgba(255,255,255,0.5);
   }
 
   .skill-card:hover {
-
-    /* very subtle movement */
     transform: translateY(-3px);
 
     box-shadow:
@@ -446,9 +425,6 @@ text-align: center;
     padding: 3px 8px;
   }
 }
-
-
-/* ---------- EXTRA SMALL DEVICES ---------- */
 
 @media (max-width: 480px) {
 
