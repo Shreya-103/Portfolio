@@ -137,30 +137,72 @@ text-align: center;
 }
 
 .skill-card {
-  background: white;
-  border-radius: 20px;
-  padding: 1.5rem;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  transform: perspective(800px) rotateX(2deg) rotateY(-2deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
   position: relative;
+  overflow: hidden;
+
+  /* 3D depth */
+  transform-style: preserve-3d;
+  transform: rotateX(6deg) rotateY(-6deg);
+
+  /* Soft floating shadow */
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
 }
 
+/* soft glow layer */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.5),
+    rgba(255,255,255,0.05)
+  );
+
+  pointer-events: none;
+}
+
+/* subtle hover, NOT clickable */
 .skill-card:hover {
-  transform: perspective(800px) rotateX(0deg) rotateY(0deg) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: rotateX(3deg) rotateY(-3deg) translateY(-6px);
+
+  box-shadow:
+    0 30px 50px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255,255,255,0.8);
 }
 
 .skill-card img {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
   margin-top: 1rem;
+
+  /* gives floating icon effect */
+  transform: translateZ(30px);
+
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
 }
 
 .skill-card h3 {
   font-size: 1.1rem;
   color: #1f2937;
   margin-bottom: 0.5rem;
+
+  transform: translateZ(20px);
 }
 
 .skill-card.learning {
@@ -169,14 +211,17 @@ text-align: center;
 
 .badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #c084fc;
+  top: 12px;
+  right: 12px;
+
+  background: linear-gradient(135deg, #c084fc, #8b5cf6);
+
   color: white;
-  padding: 4px 10px;
+  padding: 5px 12px;
+
   font-size: 0.7rem;
   border-radius: 999px;
-  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
    /* Projects Section Styles */
@@ -341,3 +386,86 @@ text-align: center;
       }
     }
   }
+  /* ---------- MOBILE OPTIMIZATION ---------- */
+
+@media (max-width: 768px) {
+
+  #skills {
+    padding: 3rem 1rem;
+  }
+
+  #skills h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .skills-grid {
+
+    /* 2 cards per row */
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1rem;
+  }
+
+  .skill-card {
+
+    padding: 1.2rem 0.8rem;
+
+    border-radius: 18px;
+
+    /* reduce heavy 3D on mobile */
+    transform: rotateX(3deg) rotateY(-3deg);
+
+    box-shadow:
+      0 12px 25px rgba(0, 0, 0, 0.08),
+      inset 0 1px 1px rgba(255,255,255,0.5);
+  }
+
+  .skill-card:hover {
+
+    /* very subtle movement */
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 16px 28px rgba(0,0,0,0.12);
+  }
+
+  .skill-card img {
+    width: 48px;
+    height: 48px;
+
+    margin-top: 0.7rem;
+  }
+
+  .skill-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .badge {
+    font-size: 0.55rem;
+    padding: 3px 8px;
+  }
+}
+
+
+/* ---------- EXTRA SMALL DEVICES ---------- */
+
+@media (max-width: 480px) {
+
+  .skills-grid {
+    gap: 0.8rem;
+  }
+
+  .skill-card {
+    padding: 1rem 0.6rem;
+  }
+
+  .skill-card img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .skill-card h3 {
+    font-size: 0.85rem;
+  }
+}
