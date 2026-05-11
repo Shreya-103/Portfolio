@@ -12,3 +12,22 @@ body.addEventListener('click', (e)=>{
         sidebar.classList.remove("active");
     }
 });
+
+const mood = document.querySelector(".mood");
+const aboutMe = document.querySelector('#aboutMe');
+
+function changeMood(){
+    if(mood.innerHTML === '🌙'){
+        document.querySelector("body").style.background = "black";
+        aboutMe.style.background = "black";
+        aboutMe.style.color = "white";
+        mood.innerHTML = "🔆";
+    }
+    else{
+        document.querySelector("body").style.background = "#ffff";
+        aboutMe.style.background = "linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb)";
+        aboutMe.style.color = "black";
+        mood.innerHTML = "🌙";
+
+    }
+}

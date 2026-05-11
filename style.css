@@ -52,6 +52,12 @@ text-align: center;
 .hide{
     visibility: hidden;
 }
+.mood{
+  margin-right: 1.5rem;
+  background-color: rgb(14, 134, 134);
+  padding:0.5rem;
+  border: 2px solid black;
+}
 
 /* SIDEBAR CONTAINER */
 #sidebar {
