@@ -473,6 +473,7 @@ overflow-x: hidden;
 50% { 
   background-position: 100% 50%; 
 }
+
 100% {
    background-position: 0% 50%;
    }
@@ -485,4 +486,10 @@ overflow-x: hidden;
 .dark #skill-card{
     background: rgba(255, 255, 255, 0.019);
 
+}
+
+.dark #project{
+  background: #000000;
+  
+  
 }
