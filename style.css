@@ -454,3 +454,35 @@ overflow-x: hidden;
     font-size: 0.85rem;
   }
 }
+
+/* DARK */
+.dark{
+  background-color: #000000;
+  color: white;
+}
+
+.dark #aboutMe{
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+  color: white;
+  animation: gradientBG 10s ease infinite;
+}
+@keyframes gradientBG {
+0% {
+   background-position: 0% 50%; 
+  }
+50% { 
+  background-position: 100% 50%; 
+}
+100% {
+   background-position: 0% 50%;
+   }
+}
+
+.dark #skills{
+  background: #000000;
+  color:#ff9a9e;
+}
+.dark #skill-card{
+    background: rgba(255, 255, 255, 0.019);
+
+}
