@@ -269,11 +269,11 @@ text-align: center;
   margin-bottom: 1rem;
 }
 .project-detail{
-  font-size: 12px;
+  font-size: 14px;
   color: #000000;
-  margin:0%;
+  margin:0.5rem 0%;
   /* line-height: 0%; */
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: sans-serif;
 }
 
 .card-body {
@@ -466,7 +466,7 @@ overflow-x: hidden;
   color: white;
   animation: gradientBG 10s ease infinite;
 }
-@keyframes gradientBG {
+.dark {@keyframes gradientBG {
 0% {
    background-position: 0% 50%; 
   }
@@ -478,7 +478,7 @@ overflow-x: hidden;
    background-position: 0% 50%;
    }
 }
-
+}
 .dark #skills{
   background: #000000;
   color:#ff9a9e;
